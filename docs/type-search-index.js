@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"ru.gb.jcore.start","l":"Main"},{"p":"ru.gb.jcore.service","l":"Menu"},{"p":"ru.gb.jcore.service","l":"Process"},{"p":"ru.gb.jcore.service","l":"StartYourCoffins"}];updateSearchResults();
