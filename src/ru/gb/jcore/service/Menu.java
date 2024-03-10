@@ -24,6 +24,7 @@ public class Menu {
         int procSelector = 0;
         Scanner scanner = new Scanner(System.in);
         // ============================== цикл меню =============================
+
         while (!getOut) {
             prompt(path); // Вывод приглашения
             answer = scanner.nextLine();
@@ -45,12 +46,41 @@ public class Menu {
 
 //                    note = answer;
 //           Забито временно
-//                    answer = new String (answer.getBytes(StandardCharsets.UTF_8));
+                    System.out.println("Cp1251 -----------------------------");
+                    String answer_1 = new String (answer.getBytes("Cp1251"));
+                    for (int i = 0; i < answer_1.length(); i++) {
+                        System.out.println("i = " + i + "; answer_1[i] = " + answer_1.charAt(i));
+                    }
+                    System.out.println("Cp866 -----------------------------");
+                    answer_1 = new String (answer.getBytes("Cp866"));
+                    for (int i = 0; i < answer_1.length(); i++) {
+                        System.out.println("i = " + i + "; answer_1[i] = " + answer_1.charAt(i) );
+                    }
+                    System.out.println("UTF-8 -----------------------------");
+                    answer_1 = new String (answer.getBytes("UTF-8"));
+                    for (int i = 0; i < answer_1.length(); i++) {
+                        System.out.println("i = " + i + "; answer_1[i] = " + answer_1.charAt(i) );
+                    }
+                    System.out.println("US_ASCII -----------------------------");
+                    answer_1 = new String (answer.getBytes(StandardCharsets.US_ASCII));
+                    for (int i = 0; i < answer_1.length(); i++) {
+                        System.out.println("i = " + i + "; answer_1[i] = " + answer_1.charAt(i) );
+                    }
+                    System.out.println("US_ASCII -----------------------------");
+                    answer_1 = new String (answer.getBytes(StandardCharsets.ISO_8859_1));
+                    for (int i = 0; i < answer_1.length(); i++) {
+                        System.out.println("i = " + i + "; answer_1[i] = " + answer_1.charAt(i) );
+                    }
 //                    answer= "Added " + formatter.format(currTime) + " : " + answer;
 //                    Process.writeToFile(path, answer);
+//                    String cp = System.getProperty("console.encoding","Cp866");
+//                    System.out.println("========== " + cp + " =========================");
+                    for (int i = 0; i < answer.length(); i++) {
+                        System.out.println("i = " + i + "; answer[i] = " + answer.charAt(i) );
+                    }
 
-
-                    note = new String (answer.getBytes("UTF-8"));
+//                    note = new String (answer.getBytes("utf-8"));
+                    note = new String (answer.getBytes("Cp866"));
                     note = "Added " + formatter.format(currTime) + " : " + note;
                     Process.writeToFile(path, note);
 
