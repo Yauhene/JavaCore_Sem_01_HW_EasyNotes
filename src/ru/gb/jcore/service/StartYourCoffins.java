@@ -3,15 +3,17 @@ package ru.gb.jcore.service;
 import java.io.*;
 import java.util.*;
 
+/**
+ * Стартовый класс
+ */
 public class StartYourCoffins {
     public String destPath; // путь к файлу назначения
-    public ArrayList<String> notesList;
 
     /**
-     * Стартовый метод.
+     * Конструктор.
      * При отсутствии аргумента командной строки выводит предупреждение и закрывает программу.
      * @param path - параметр командной строки
-     * @throws IOException
+     * @throws IOException - ошибка ввода-вывода
      */
     public StartYourCoffins(String[] path) throws IOException {
         System.out.println();
@@ -20,8 +22,7 @@ public class StartYourCoffins {
             System.out.println("Печально, но это - ФИАСКО !!!");
         } else {
             this.destPath = path[0];
-            notesList = Process.notes_from_File(destPath);
-            Menu.menu(destPath, notesList);
+            Menu.menu(destPath);
         }
     }
 }

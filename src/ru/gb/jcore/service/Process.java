@@ -34,7 +34,7 @@ public class Process {
      * Метод добавления заметки в файл
      * @param path - путь к файлу
      * @param answer - ответ пользователя (новая заметка)
-     * @throws IOException
+     * @throws IOException - ошибка ввода-вывода
      */
     public static void writeToFile(String path, String answer) throws IOException {
         String tempString = "";
@@ -54,7 +54,6 @@ public class Process {
                 System.out.println(e.getMessage());
             }
         }
-
     }
 
     /**
