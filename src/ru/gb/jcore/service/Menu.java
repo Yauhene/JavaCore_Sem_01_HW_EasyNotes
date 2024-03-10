@@ -1,6 +1,7 @@
 package ru.gb.jcore.service;
 
 import java.io.*;
+import java.nio.charset.*;
 import java.text.*;
 import java.util.*;
 
@@ -19,6 +20,7 @@ public class Menu {
     public static void menu(String path, ArrayList<String> notes) throws IOException {
         boolean getOut = false;
         String answer = "";
+        String note = "";
         int procSelector = 0;
         Scanner scanner = new Scanner(System.in);
         // ============================== цикл меню =============================
@@ -38,9 +40,22 @@ public class Menu {
                     Date currTime;
                     currTime = new Date();
                     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
-                    answer = "Added " + formatter.format(currTime) + " : " + answer;
-                    Process.writeToFile(path, answer);
-                    break;
+//                    note = "Лошаааа-дкааааа!!!";
+//                    answer = "Лошаааа-дкааааа!!!";
+
+//                    note = answer;
+//           Забито временно
+//                    answer = new String (answer.getBytes(StandardCharsets.UTF_8));
+//                    answer= "Added " + formatter.format(currTime) + " : " + answer;
+//                    Process.writeToFile(path, answer);
+
+
+                    note = new String (answer.getBytes("UTF-8"));
+                    note = "Added " + formatter.format(currTime) + " : " + note;
+                    Process.writeToFile(path, note);
+
+                    System.out.println("note = " + note);
+                    System.out.println("answer = " + answer);
                 }
             }
         }

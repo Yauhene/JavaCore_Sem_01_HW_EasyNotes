@@ -43,7 +43,8 @@ public class Process {
         if (path != null){
             try {
                 OutputStream outputStream = new FileOutputStream(path, true);
-                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "Cp1251");
+//                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "utf-8");
+                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
                 tempString += answer + "\n";
                 outputStreamWriter.write(tempString);
                 outputStreamWriter.flush();
