@@ -5,7 +5,6 @@ import java.text.*;
 import java.util.*;
 
 public class Menu {
-
     /**
      * Метод меню.
      * Принимает ответ пользователя и в соответствии с ним запускает:
@@ -13,7 +12,7 @@ public class Menu {
      *      2. Процесс изменения файла-приемника
      *      3. Принимает новую заметку
      * @param path - путь к файлу-приемнику
-     * @throws IOException
+     * @throws IOException - ошибка ввода-вывода
      */
     public static void menu(String path) throws IOException {
         boolean getOut = false;

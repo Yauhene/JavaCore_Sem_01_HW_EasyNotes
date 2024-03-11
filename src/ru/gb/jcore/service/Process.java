@@ -12,9 +12,9 @@ public class Process {
     /**
      * Функция обработки ответа пользователя
      * Возвращает:
-     *      0 - если введена пустая строка
-     *      1 - если введена команда смены файла-приемника
-     *      2 - если введена заметка
+     *      "exit" - если введена пустая строка
+     *      "change_path" - если введена команда смены файла-приемника
+     *      "take" - если введена заметка
      * @param answer - ответ пользователя
      * @return
      */
@@ -43,13 +43,11 @@ public class Process {
         if (path != null){
             try {
                 OutputStream outputStream = new FileOutputStream(path, true);
-//                OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "utf-8");
                 OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
                 tempString += answer + "\n";
                 outputStreamWriter.write(tempString);
                 outputStreamWriter.flush();
                 outputStreamWriter.close();
-
             } catch (IOException e) {
                 System.out.println(e.getMessage());
             }

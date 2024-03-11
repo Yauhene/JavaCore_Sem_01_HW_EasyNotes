@@ -1,14 +1,12 @@
 package ru.gb.jcore.service;
 
 import java.io.*;
-import java.util.*;
 
 /**
  * Стартовый класс
  */
 public class StartYourCoffins {
     public String destPath; // путь к файлу назначения
-
     /**
      * Конструктор.
      * При отсутствии аргумента командной строки выводит предупреждение и закрывает программу.
