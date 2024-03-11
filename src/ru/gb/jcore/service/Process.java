@@ -1,11 +1,7 @@
 package ru.gb.jcore.service;
 
 import java.io.*;
-import java.nio.charset.*;
-import java.sql.*;
-import java.text.*;
 import java.util.*;
-import java.util.Date;
 
 public class Process {
 
@@ -16,11 +12,10 @@ public class Process {
      *      "change_path" - если введена команда смены файла-приемника
      *      "take" - если введена заметка
      * @param answer - ответ пользователя
-     * @return
      */
     public static String takeIt(String answer) {
-        String result = "0";
-        if (answer.equals("")) {
+        String result;
+        if (answer.isEmpty()) {
             result = "exit";
         } else if (answer.equals("-cp")) {
             result = "change_path";
@@ -38,8 +33,6 @@ public class Process {
      */
     public static void writeToFile(String path, String answer) throws IOException {
         String tempString = "";
-        Date currTime;
-        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
         if (path != null){
             try {
                 OutputStream outputStream = new FileOutputStream(path, true);
@@ -56,8 +49,8 @@ public class Process {
 
     /**
      * Функция, возвращающая массив заметок из файла
-     * @param path
-     * @return
+     * @param path - путь к файлу-источнику
+     * @return arr - возвращаемое значение
      */
     public static ArrayList<String> notes_from_File(String path) {
         ArrayList<String> arr = new ArrayList<>();

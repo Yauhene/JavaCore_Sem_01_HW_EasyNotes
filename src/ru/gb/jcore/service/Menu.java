@@ -39,10 +39,8 @@ public class Menu {
                     Date currTime;
                     currTime = new Date();
                     SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy hh:mm:ss");
-
                     note = "Added " + formatter.format(currTime) + " : " + answer;
                     Process.writeToFile(path, note);
-
                 }
             }
         }
