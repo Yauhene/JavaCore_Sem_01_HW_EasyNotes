@@ -19,7 +19,7 @@ public class Menu {
         String answer = "";
         String note = "";
         int procSelector = 0;
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in, "cp866");;
         // ============================== цикл меню =============================
 
         while (!getOut) {
